@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <router-view></router-view>
+  <suspense>
+    <router-view></router-view>
+  </suspense>
 </template>
 
 <style scoped>
