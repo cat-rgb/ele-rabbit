@@ -3,16 +3,18 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 import electron from "vite-plugin-electron";
 import electronRender from "vite-plugin-electron-renderer";
-import AutoImport from "unplugin-auto-import";
+import AutoImport from "unplugin-auto-import/vite"; // 注意这里的导入路径
+import UnoCSS from 'unocss/vite'
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   console.log(command, mode);
   return {
     plugins: [
-      // AutoImport({
-      //   imports: ["vue", "vue-router"],
-      //   dts: "src/auto-imports.d.ts", // 如果需要类型声明
-      // }),
+      UnoCSS(),
+      AutoImport({
+        imports: ["vue", "vue-router"],
+        dts: "src/auto-imports.d.ts", // 如果需要类型声明
+      }),
       vue(),
       electron({
         entry: "electron/main.ts",

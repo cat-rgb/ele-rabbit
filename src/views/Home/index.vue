@@ -1,26 +1,20 @@
 <template>
-<div>
-    123
-</div>
+    <Banner></Banner>
+    <category></category>
+    <recommend></recommend>
+    <Goods></Goods>
 </template>
 
-<script lang="ts" setup>
-import { getHomeHot } from '@/request/api';
-import { ref, onBeforeMount } from 'vue';
-
-onBeforeMount(async() => {
-   
-})
-const homeHotList = ref([])
-const { result} = await getHomeHot()
-homeHotList.value = result
-
-
-
-
+<script lang='ts' setup>
+import Banner from "./banner.vue"
+import category from "./category.vue"
+import recommend from "./recommend.vue"
+// import homeNew from "./homeNew.vue"
+import Goods from "./goods.vue"
 
 
 </script>
 
-<style scoped lang="scss">
+<style scoped>
+
 </style>

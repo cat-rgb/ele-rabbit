@@ -6,8 +6,8 @@ const service = axios.create({
 })
 
 interface ResponseResult {
-    code: string,
-    msg: string,
+    code: string
+    msg: string
     result: any
 }
 

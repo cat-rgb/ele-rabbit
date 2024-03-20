@@ -1,7 +1,7 @@
 <template>
-  <div class="container" router>
+  <div class="container"  w-screen h-screen>
     <el-menu>
-    <el-menu-item v-for="item in menuList" :index="item.path" :key="item.path" @select="goPage(item)">{{ item.title }}</el-menu-item>
+    <el-menu-item v-for="item in menuList" :index="item.path" :key="item.path" @click="goPage(item)">{{ item.title }}</el-menu-item>
   </el-menu>
   <div class="content">
     <router-view></router-view>
@@ -22,17 +22,18 @@ const menuList = ref([
     {
         title: '文章',
         icon: 'el-icon-s-order',
-        path: '/article'
+        path: '/home'
     },
     {
         title: '标签',
         icon: 'el-icon-s-flag',
-        path: "/tag"
+        path: "/home"
     }
 ])
 
 const goPage = (item: any) => {
   console.log(123)
+
   router.push(item.path)
 }
 </script>
@@ -45,6 +46,7 @@ const goPage = (item: any) => {
   display: flex;
   flex-direction: row;
   .content {
+    overflow: auto;
     flex: 1;
   }
 }
